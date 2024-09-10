@@ -1,33 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mb-4">Pilihan Beasiswa</h1>
-
-    <div class="row justify-content-center">
-        <!-- Card Beasiswa Akademik -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Beasiswa Akademik
+    <section id="scholarship-section" class="sec1 py-5">
+        <div class="container text-center">
+            <h1 class="subtitle position-relative d-inline-block mb-5">CHOOSE A SCHOLARSHIP
+                <span class="rounded position-absolute d-inline-block bg-primary" style="width: 12rem; height: 4px; bottom: -10px; left: 50%; transform: translateX(-50%);"></span>
+            </h1>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold text-primary">Beasiswa Akademik</h3>
+                            <p class="card-text">Beasiswa yang diberikan untuk mahasiswa dengan prestasi akademik yang luar biasa. Tersedia bagi yang memiliki prestasi akademik yang memenuhi kriteria tertentu.</p>
+                            <a href="{{ route('beasiswa.create') }}" class="btn btn-primary">Get Started</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>Beasiswa untuk mahasiswa dengan prestasi akademik yang luar biasa.</p>
-                    <a href="{{ route('beasiswa.create') }}" class="btn btn-primary">Daftar Beasiswa Akademik</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card Beasiswa Non-Akademik -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Beasiswa Non-Akademik
-                </div>
-                <div class="card-body">
-                    <p>Beasiswa untuk mahasiswa dengan prestasi di bidang non-akademik.</p>
-                    <a href="{{ route('beasiswa.create') }}" class="btn btn-primary">Daftar Beasiswa Non-Akademik</a>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold text-primary">Beasiswa Non-Akademik</h3>
+                            <p class="card-text">Beasiswa yang diberikan untuk mahasiswa dengan prestasi di bidang non-akademik seperti olahraga, seni, atau kegiatan sosial.</p>
+                            <a href="{{ route('beasiswa.create') }}" class="btn btn-primary">Get Started</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
