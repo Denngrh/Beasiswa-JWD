@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-
-        <div class="card">
-            <div class="card-header">
+    <div class="container py-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
                 <h5 class="card-title text-center">Formulir Pendaftaran Beasiswa</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body p-4">
                 <form action="{{ route('beasiswa.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
@@ -22,41 +21,44 @@
                         </div>
                     @endif
 
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Masukkan Nama</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required autocomplete="off">
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Masukkan Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Nomor HP</label>
-                        <input type="number" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required autocomplete="off">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Masukkan Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required autocomplete="off">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Masukkan Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="semester" class="form-label">Semester Saat Ini</label>
-                        <select class="form-select" id="semester" name="semester" required>
-                            @for ($i = 1; $i <= 8; $i++)
-                                <option value="{{ $i }}" {{ old('semester') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                            @endfor
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="gpa" class="form-label">IPK terakhir</label>
-                        <input type="text" class="form-control" id="gpa" name="gpa" value="{{ old('gpa') }}" readonly>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Nomor HP</label>
+                            <input type="number" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required autocomplete="off">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="semester" class="form-label">Semester Saat Ini</label>
+                            <select class="form-select" id="semester" name="semester" required>
+                                @for ($i = 1; $i <= 8; $i++)
+                                    <option value="{{ $i }}" {{ old('semester') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="scholarship_type" class="form-label">Pilihan Beasiswa</label>
-                        <select class="form-select" id="scholarship_type" name="scholarship_type" required>
-                            <option value="Akademik" {{ old('scholarship_type') == 'Akademik' ? 'selected' : '' }}>Akademik</option>
-                            <option value="Non-Akademik" {{ old('scholarship_type') == 'Non-Akademik' ? 'selected' : '' }}>Non-Akademik</option>
-                        </select>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="gpa" class="form-label">IPK Terakhir</label>
+                            <input type="text" class="form-control" id="gpa" name="gpa" value="{{ old('gpa') }}" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="scholarship_type" class="form-label">Pilihan Beasiswa</label>
+                            <select class="form-select" id="scholarship_type" name="scholarship_type" required>
+                                <option value="Akademik" {{ old('scholarship_type') == 'Akademik' ? 'selected' : '' }}>Akademik</option>
+                                <option value="Non-Akademik" {{ old('scholarship_type') == 'Non-Akademik' ? 'selected' : '' }}>Non-Akademik</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -64,7 +66,7 @@
                         <input type="file" class="form-control" id="document" name="document">
                     </div>
 
-                    <button type="submit" class="btn btn-primary" id="submitBtn">Daftar</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mt-3" id="submitBtn">Daftar</button>
                 </form>
             </div>
         </div>
