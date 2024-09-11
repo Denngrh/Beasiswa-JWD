@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('alamat');
             $table->string('phone');
             $table->unsignedTinyInteger('semester');
             $table->decimal('gpa', 3, 2);

@@ -8,6 +8,6 @@ class Beasiswa extends Model
 {
     use HasFactory;
     protected $table = 'beasiswa';
-    protected $fillable = ['nama', 'email', 'nomor_hp', 'semester', 'ipk', 'beasiswa', 'berkas'];
+    protected $fillable = ['nama', 'email', 'alamat', 'nomor_hp', 'semester', 'ipk', 'beasiswa', 'berkas'];
 }
 

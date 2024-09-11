@@ -25,6 +25,7 @@ class BeasiswaController extends Controller
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email',
+        'alamat' => 'required|string|max:255',
         'phone' => 'required|numeric',
         'semester' => 'required|integer|between:1,8',
         'scholarship_type' => 'required|string',
@@ -42,6 +43,7 @@ class BeasiswaController extends Controller
     $beasiswa = new Beasiswa();
     $beasiswa->name = $request->input('name');
     $beasiswa->email = $request->input('email');
+    $beasiswa->alamat = $request->input('alamat');
     $beasiswa->phone = $request->input('phone');
     $beasiswa->semester = $request->input('semester');
     $beasiswa->gpa = $request->input('gpa');

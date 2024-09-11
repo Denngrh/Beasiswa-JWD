@@ -32,6 +32,11 @@
                         </div>
                     </div>
 
+
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Masukkan alamat</label>
+                        <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}" required autocomplete="off">
+                    </div>
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="phone" class="form-label">Nomor HP</label>

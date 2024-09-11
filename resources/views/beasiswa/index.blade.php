@@ -26,6 +26,7 @@
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Nomor HP</th>
+                                    <th>Alamat</th>
                                     <th>Semester</th>
                                     <th>IPK</th>
                                     <th>Jenis Beasiswa</th>
@@ -39,6 +40,7 @@
                                         <td>{{ $beasiswa->name }}</td>
                                         <td>{{ $beasiswa->email }}</td>
                                         <td>{{ $beasiswa->phone }}</td>
+                                        <td>{{ $beasiswa->alamat }}</td>
                                         <td>{{ $beasiswa->semester }}</td>
                                         <td>{{ $beasiswa->gpa }}</td>
                                         <td>{{ $beasiswa->scholarship_type }}</td>
